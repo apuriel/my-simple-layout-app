@@ -1,0 +1,22 @@
+/* src/styles/main.css */
+
+/* Un reseteo básico para quitar márgenes y paddings por defecto del navegador */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos para el contenedor principal de nuestro layout */
+.layout-container {
+  display: flex; /* Para poner el sidebar y el contenido principal uno al lado del otro */
+  height: 100vh; /* Ocupa el 100% del alto de la pantalla */
+}
+
+/* Estilos para el área principal de contenido */
+.main-content-area {
+  flex-grow: 1; /* Permite que ocupe todo el espacio restante horizontalmente */
+  padding: 20px; /* Un poco de espacio alrededor del contenido */
+  background-color: #f0f2f5; /* Un color de fondo suave */
+  overflow-y: auto; /* Para que el contenido pueda scrollear si es muy largo */
+}

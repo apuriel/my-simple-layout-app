@@ -1,0 +1,95 @@
+/* src/components/Sidebar/Sidebar.css */
+
+.appSidebar {
+  width: 300px; /* Ancho fijo */
+  background-color: #1a202c; /* Fondo muy oscuro, casi negro */
+  color: #e2e8f0; /* Color de texto claro para contraste */
+  padding: 0; /* Quitamos padding aquí para controlarlo con los ítems */
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+  display: flex;
+  flex-direction: column; /* Apila los elementos verticalmente */
+  height: 100vh; /* Asegura que ocupe todo el alto disponible */
+  overflow-y: auto; /* Permite scroll si el contenido es largo */
+}
+
+/* Estilos para el encabezado del sidebar (logo/nombre de la app) */
+.sidebarHeader {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #2d3748; /* Línea divisoria sutil */
+  margin-bottom: 15px;
+}
+
+.sidebarHeader h3 {
+  margin: 0;
+  color: #63b3ed; /* Un color azul eléctrico para el título */
+  font-size: 1.6em;
+  letter-spacing: 1.5px; /* Espaciado entre letras para un look tech */
+  text-transform: uppercase; /* Mayúsculas */
+}
+
+/* Estilos de navegación del sidebar */
+.appSidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1; /* Esto hace que la lista ocupe el espacio restante */
+}
+
+.appSidebar nav li {
+  margin-bottom: 2px; /* Espacio mínimo entre los ítems */
+}
+
+.appSidebar nav a {
+  display: flex; /* Para alinear icono y texto */
+  align-items: center; /* Centrar verticalmente */
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #cbd5e0; /* Color grisáceo para los enlaces por defecto */
+  font-size: 0.95em;
+  transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+  border-radius: 4px; /* Bordes ligeramente redondeados */
+ /* margin: 0 10px; /* Margen a los lados para que el hover no ocupe todo el ancho */
+}
+
+/* Estilos al pasar el mouse por encima (hover) */
+.appsSidebar nav a:hover {
+  background-color: #2d3748; /* Fondo más oscuro al pasar el mouse */
+  color: #fff; /* Texto blanco puro al pasar el mouse */
+  padding-left: 25px; /* Pequeño efecto de "salto" al pasar el mouse */
+}
+
+/* Estilos para el elemento activo */
+.appSidebar nav a.active {
+  background-color: #4a5568; /* Un gris-azul más oscuro para el activo */
+  color: #63b3ed; /* Azul eléctrico para el texto del activo */
+  font-weight: bold;
+  box-shadow: inset 3px 0 0 0 #63b3ed; /* Una barra azul en el borde izquierdo */
+}
+
+/* Estilos para los iconos dentro del enlace */
+.appSidebar nav a svg {
+  margin-right: 12px; /* Espacio entre el icono y el texto */
+  font-size: 1.2em; /* Tamaño del icono */
+  color: #a0aec0; /* Color grisáceo para los iconos por defecto */
+}
+
+/* Color del icono cuando el enlace está activo */
+.appSidebar nav a.active svg {
+  color: #63b3ed; /* Color azul eléctrico para el icono activo */
+}
+
+/* Estilos para el texto de la descripción del ítem (el span) */
+.itemDescription {
+  flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
+}
+
+/* Estilos para el footer del sidebar */
+.sidebarFooter {
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 0.8em;
+  color: #718096; /* Un gris más oscuro para el footer */
+  border-top: 1px solid #2d3748; /* Línea divisoria */
+  margin-top: 20px;
+}
