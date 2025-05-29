@@ -93,3 +93,89 @@
   border-top: 1px solid #2d3748; /* Línea divisoria */
   margin-top: 20px;
 }
+
+/* NUEVOS estilos para los submenús */
+.hasChildren > ul {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  padding-left: 20px; /* indentación visual del submenu */
+}
+
+.expanded > ul {
+  max-height: 500px; /* valor alto para permitir expansión */
+  opacity: 1;
+}
+
+/* Indicador visual '>' */
+.hasChildren > a::after {
+  content: ">";
+  display: inline-block;
+  margin-left: auto;
+  transition: transform 0.3s ease;
+  transform: rotate(0deg);
+}
+
+.expanded > a::after {
+  transform: rotate(90deg);
+}
+
+
+
+.menuItemWrapper {
+  transition: all 0.3s ease;
+}
+
+/* Aplica a los elementos que son seleccionados */
+.menuItemWrapper a.active {
+  background-color: #4a5568;
+  color: #63b3ed;
+  font-weight: bold;
+  box-shadow: inset 3px 0 0 0 #63b3ed;
+}
+
+/* Submenú expandido */
+.menuItemWrapper.expanded > ul {
+  max-height: 1000px;
+  opacity: 1;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  overflow: hidden;
+}
+
+/* Submenú colapsado por defecto */
+.menuItemWrapper > ul {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+/* Si el ítem tiene hijos */
+.hasChildren > a::after {
+  content: "▸";
+  margin-left: auto;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+/* Flecha girada si está expandido */
+.menuItemWrapper.expanded > a::after {
+  transform: rotate(90deg);
+}
+
+
+
+.submenuOpen {
+  max-height: 1000px; /* asegurate que sea mayor que la altura del contenido */
+  opacity: 1;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.submenuClosed {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
